@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>👋</h1>
+				</section>
+
+				<section>
+					<section>
+						<h2>DPI, DPR</h2>
+						<p>Issues with high DPI monitors and calculations in CSS/JS media queries</p>
+					</section>
+					<section>
+						<h2>Demo time 😉</h2>
+						<p><a href="https://codepen.io/PowerSlime/full/oNejOgR" target="_blank">codepen.io</a></p>
+					</section>
+					<section>
+						<h2>How to fix it?</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>🥱</h1>
+					</section>
+					<section>
+						<h2>Dots Per Inch</h2>
+					</section>
+					<section>
+						<h2>Device Pixel Ratio</h2>
+						<p>Pixels aren't <em>really</em> pixels 🙂</p>
+					</section>
+					<section>
+						<h2>Logical and physical pixel</h2>
+						<div class="fragment">
+							<p>Example for iPhone 4</p>
+							<ul>
+								<li>Logical resolution: 480x320</li>
+								<li>Physical resolution: 960x640</li>
+							</ul>
+						</div>
+						<p class="fragment">DPR is 2</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>🎉</h1>
+					</section>
+					<section>
+						<h2>The fun begins!</h2>
+					</section>
+					<section>
+						<h2>Let's try 🙂</h2>
+						<p>to check our <a href="https://www.screenresolution.org/" target="_blank">screen resolution online</a>.</p>
+						<p class="fragment">And one more <a href="https://www.mydevice.io/" target="_blank">cool website</a>!</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>😵</h2>
+					</section>
+
+					<section>
+						<h2>Devs as users 🙄</h2>
+						<ul class="fragment">
+							<li>Windows interface scaling</li>
+							<li>Browser font scaling</li>
+							<li>Browser zoom</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>🦦</h1>
+					</section>
+					<section>
+						<h2>How to deal with it?</h2>
+					</section>
+					<section>
+						<h2>Ignore it</h2>
+						<p>The <a
+								href="https://getbootstrap.com/docs/5.1/getting-started/browsers-devices/#browser-zooming">bootstrap way</a> 🙂</p>
+					</section>
+					<section>
+						<h2>Sooner!</h2>
+						<p>Use media query sooner as you need it</p>
+					</section>
+					<section>
+						<h2>100</h2>
+						<pre><code class="language-css" data-trim data-noescape>
+							@media (max-width: 700px) {};
+							@media (max-width: 600px) {};
+							@media (max-width: 500px) {};
+						</code></pre>
+					</section>
+					<section>
+						<h2>No responsive design</h2>
+						<p>No responsive design, no problems (kind of). 🙂</p>
+						<p>Use grid-like system</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>😒</h2>
+					</section>
+
+					<section>
+						<h2>Bad practice</h2>
+						<p>IMO</p>
+					</section>
+
+					<section>
+						<h2>:root { zoom: 0.8 }</h2>
+						<p>
+							<a href="https://silvawebdesigns.com/how-to-fix-windows-scaling-issues-above-100-for-your-website/" target="_blank">solution</a></p>
+					</section>
+
+					<section>
+						<h2>Hard-coded DPR in CSS</h2>
+						<pre><code class="language-css" data-trim data-noescape>
+							@media (-webkit-device-pixel-ratio: 1) {};
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>✔</h2>
+					</section>
+
+					<section>
+						<h2>Responsive website</h2>
+						<ul>
+							<li>rem's instead of px everywhere (<a href="https://github.com/cuth/postcss-pxtorem" target="_blank">postcss-pxtorem</a>)</li>
+							<li>media query sooner as you need it (IMO 10px+)</li>
+							<li class="fragment">Disable your interface scaling while developing</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>One more <a
+							href="https://www.bennadel.com/blog/3811-looking-at-how-browser-zoom-affects-css-media-queries-and-pixel-density.htm" target="_blank">link</a>...</h2>
+				</section>
+
+				<section>
+					<h2>u 😸</h2>
+				</section>
+
+				<section>
+					<h2>❓</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
